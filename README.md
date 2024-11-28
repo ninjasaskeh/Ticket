@@ -1,5 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Server Actions
+- `Server Actions` are mainly, for now, used for creating, updating and deleting tickets(mutations) from the `Client side` as they make a POST request.
+- If you want to call a `Server Action` from the `Client Side`, you'll have to create a separate file with`"use server"` at the top of the file.
+```typescript
+// lib/actions.ts
+"use server"
+
+export async function mutate() {}
+```
+- To call a `Server Action` from the `Server Side`. you can just write`"use server"`at the top of the function body.
+```typescript
+async function handleSubmit() {
+    "use server"
+    //...
+}
+```
+
 ## Getting Started
 
 First, run the development server:
